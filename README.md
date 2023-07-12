@@ -1,2 +1,2 @@
 # STA137-Time-Series
-Python Coding
+Python Coding for Lecture Notes SQ23
