@@ -12,7 +12,7 @@ University of California, Davis
 
 **Teaching Assistant:** TBD
 
-**Schedules:**
+**Schedule**
 ---
 **Classes:** MWF 9:00 - 9:50 AM, Young Hall 194
 
@@ -24,12 +24,14 @@ University of California, Davis
 
 *You can view the lab session as extended office hours, attendance is optional but might be useful.*
 
+**Final exam:** 12/13/2023 6:00 PM
+
 **Lecture Notes**
 ---
 
 Will be distributed chapter-wise in advance. Please check carefully for typos and mistakes and submit a list of what you found for potential extra credit. The notes will be uploaded continuously with your input. 
 
-**Optional Textbooks:**
+**Optional Textbooks**
 ---
 Brockwell/Davis, *Introduction to Time Series and Forecasting (2nd ed.)*, Springer, 2002.
 
@@ -39,20 +41,20 @@ Shumway/Stoffer, *Time Series Analysis and Its Applications (3rd ed.)*, Springer
 
 *Note that the second and third book are available as pdf files from the library website.*
 
-**Prerequisite:**
+**Prerequisite**
 ---
 STA 108, or the equivalent.
 
 *Note that STA 130A or STA 131A have proved useful in the past but are not required.*
 
-**Topics (tentative):**
+**Topics (tentative)**
 ---
 * Decomposition of time series into trend, seasonality and dependent errors
 * Modeling of dependent errors: stationarity, linear time series, ARMA processes
 * Estimation and prediction of stationary time series
 * Spectral analysis: cyclical behavior, periodicity and periodogram
 
-**Learning Outcomes:**
+**Learning Outcomes**
 ----
 Students taking STA 137 should learn the basics of
 * statistical reasoning and inferential methods for dependent data
@@ -61,10 +63,14 @@ Students taking STA 137 should learn the basics of
 * performing data analysis for time series using statistical computing tools and software
 * the methodological and probabilistic foundations of statistics for dependent data
 
-**Grading Policy:**
+**Grading Policy**
 ---
 Grades will be computed according to the following arrangements
-  Midterm exam: 35% Final exam: 40% Project: 25% of final grade
+<pre>  Midterm exam: 35%  Final exam: 40%  Project: 25% of final grade</pre>
+
+<!--&nbsp; Midterm exam: 35% &nbsp;  Final exam: 40% &nbsp;  Project: 25% of final grade-->
+
+  
   * A: between 90 and 100% (the A range will not be curved)
   * B: between class median and 89% (above average performance gives above average grade)
   * C: between class median minus 1.5 standard deviations and class median
@@ -78,6 +84,7 @@ course will be based on your overall score. The usual conventions apply regardin
 ---
 * R
 * Python
+* Data is provided in the folder-data above
 
 
 
