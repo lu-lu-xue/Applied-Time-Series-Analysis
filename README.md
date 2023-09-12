@@ -10,7 +10,7 @@ Department of Statistics
 
 University of California, Davis
 
-**Teaching Assistant:** TBD
+**Teaching Assistant:** Lingyou Pang, lyopang@ucdavis.edu
 
 **Schedule**
 ---
