@@ -1,6 +1,5 @@
 # STA137 FQ23
 Applied Time Series Analysis 
-(Coding with Python)
 
 **Instructor:** [Alexander Aue](https://anson.ucdavis.edu/~alexaue/), aaue@ucdavis.edu, 530.752.0560
 
