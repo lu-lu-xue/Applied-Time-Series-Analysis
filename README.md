@@ -1,6 +1,5 @@
 # STA137 FQ23
 Applied Time Series Analysis 
-(Coding with Python)
 
 **Instructor:** [Alexander Aue](https://anson.ucdavis.edu/~alexaue/), aaue@ucdavis.edu, 530.752.0560
 
@@ -63,12 +62,12 @@ Students taking STA 137 should learn the basics of
 * performing data analysis for time series using statistical computing tools and software
 * the methodological and probabilistic foundations of statistics for dependent data
 
-**Grading Policy**
+<!-- **Grading Policy**
 ---
 Grades will be computed according to the following arrangements
 <pre>  Midterm exam: 35%  Final exam: 40%  Project: 25% of final grade</pre>
 
-<!--&nbsp; Midterm exam: 35% &nbsp;  Final exam: 40% &nbsp;  Project: 25% of final grade-->
+&nbsp; Midterm exam: 35% &nbsp;  Final exam: 40% &nbsp;  Project: 25% of final grade
 
   
   * A: between 90 and 100% (the A range will not be curved)
@@ -78,7 +77,7 @@ Grades will be computed according to the following arrangements
   * F: less than class median minus 2.0 standard deviations
 
 *Note that no individual letter grades will be given for midterm/final exams and project. Your letter grade for the
-course will be based on your overall score. The usual conventions apply regarding the use of “+” and “-”.*
+course will be based on your overall score. The usual conventions apply regarding the use of “+” and “-”.* -->
 
 **Software and Data**
 ---
