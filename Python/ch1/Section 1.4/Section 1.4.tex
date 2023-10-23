@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 
+    \usepackage[font=it,labelfont=bf]{caption}
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
     
@@ -19,9 +20,9 @@
     % Ensure that by default, figures have no caption (until we provide a
     % proper Figure object with a Caption API and a way to capture that
     % in the conversion process - todo).
-    \usepackage{caption}
-    \DeclareCaptionFormat{nocaption}{}
-    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+    % \usepackage{caption}
+    % \DeclareCaptionFormat{nocaption}{}
+    % \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
 
     \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
@@ -383,7 +384,7 @@
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{20}{\boxspacing}
+\prompt{In}{incolor}{2}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} preprocess data}
 \PY{n}{wine} \PY{o}{=} \PY{p}{[}\PY{n}{i}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{p}{)} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{open}\PY{p}{(}\PY{l+s+s2}{\PYZdq{}}\PY{l+s+s2}{../../data/wine.dat.rtf}\PY{l+s+s2}{\PYZdq{}}\PY{p}{)}\PY{o}{.}\PY{n}{readlines}\PY{p}{(}\PY{p}{)}\PY{p}{]}
@@ -406,7 +407,7 @@ to October 1991 (left) and its log transformation with yearly mean
 estimates (right).
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{21}{\boxspacing}
+\prompt{In}{incolor}{3}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} create time stamps}
 \PY{n}{times} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{n}{np}\PY{o}{.}\PY{n}{datetime64}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{1980\PYZhy{}01}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}\PY{p}{,}
@@ -419,20 +420,8 @@ estimates (right).
 \end{Verbatim}
 \end{tcolorbox}
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{21}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-      0       log       date
-0   675  6.514713 1980-01-31
-1   703  6.555357 1980-02-29
-2   887  6.787845 1980-03-31
-3  1139  7.037906 1980-04-30
-4  1077  6.981935 1980-05-31
-\end{Verbatim}
-\end{tcolorbox}
-        
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{25}{\boxspacing}
+\prompt{In}{incolor}{4}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} calculate the yearly average from monthly day for log\PYZhy{}transformed data}
 \PY{c+c1}{\PYZsh{} reset index, generate a new dataframe}
@@ -444,22 +433,9 @@ estimates (right).
 
 \PY{c+c1}{\PYZsh{} select the previous 141 data, assign to \PYZsq{}yearly\PYZus{}average\PYZsq{}}
 \PY{n}{wine\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{yearly\PYZus{}average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{n}{newdf}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{141}\PY{p}{]}
-\PY{n}{wine\PYZus{}df}\PY{o}{.}\PY{n}{head}\PY{p}{(}\PY{p}{)}
 \end{Verbatim}
 \end{tcolorbox}
 
-            \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{25}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-      0       log       date yearly\_average
-0   675  6.514713 1980-01-31       6.844599
-1   703  6.555357 1980-02-29       6.844599
-2   887  6.787845 1980-03-31       6.844599
-3  1139  7.037906 1980-04-30       6.844599
-4  1077  6.981935 1980-05-31       6.844599
-\end{Verbatim}
-\end{tcolorbox}
-        
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{5}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
@@ -473,9 +449,12 @@ estimates (right).
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_0.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_6_0.png}
+        \caption{Time series plots of the red wine sales in Australia from January 1980 to October 1991
+        (left) and its log transformation with yearly mean estimates (right).}
+    \end{figure}
     { \hspace*{\fill} \\}
     
     Figure 1.11
@@ -485,7 +464,7 @@ The detrended log series (left), the estimated seasonal component
 Australian red wine sales data.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{57}{\boxspacing}
+\prompt{In}{incolor}{6}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} calcualted estimated seasonal components}
 \PY{c+c1}{\PYZsh{} extract yearly average values}
@@ -518,7 +497,7 @@ Australian red wine sales data.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{58}{\boxspacing}
+\prompt{In}{incolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{fig}\PY{p}{,} \PY{n}{axs} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}\PY{p}{,}\PY{n}{constrained\PYZus{}layout} \PY{o}{=} \PY{k+kc}{True}\PY{p}{)}
 \PY{n}{axs}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{times}\PY{p}{,} \PY{n}{wine\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{log}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{o}{\PYZhy{}}\PY{n}{wine\PYZus{}df}\PY{p}{[}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{yearly\PYZus{}average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{]}\PY{p}{)}
@@ -528,15 +507,18 @@ Australian red wine sales data.
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{58}{\boxspacing}
+\prompt{Out}{outcolor}{7}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-[<matplotlib.lines.Line2D at 0x7fb958b2ef50>]
+[<matplotlib.lines.Line2D at 0x7fd3c20913d0>]
 \end{Verbatim}
 \end{tcolorbox}
         
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_9_1.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{output_9_1.png}
+        \caption{The detrended log series (left), the estimated seasonal component (center) and the corresponding
+        residuals series (right) of the Australian red wine sales data.}
+    \end{figure}
     { \hspace*{\fill} \\}
     
     Figure 1.12
@@ -547,7 +529,7 @@ The differenced observed series \(\nabla_{12}x_t\) (left),
 Australian red wine sales data.
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{59}{\boxspacing}
+\prompt{In}{incolor}{8}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{c+c1}{\PYZsh{} create a lag\PYZhy{}difference}
 \PY{k}{def} \PY{n+nf}{lagDiff}\PY{p}{(}\PY{n}{data}\PY{p}{,}\PY{n}{d}\PY{p}{)}\PY{p}{:}
@@ -561,7 +543,7 @@ Australian red wine sales data.
 \end{tcolorbox}
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{60}{\boxspacing}
+\prompt{In}{incolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
 \PY{n}{fig}\PY{p}{,} \PY{n}{axs} \PY{o}{=} \PY{n}{plt}\PY{o}{.}\PY{n}{subplots}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{n}{figsize}\PY{o}{=}\PY{p}{(}\PY{l+m+mi}{15}\PY{p}{,}\PY{l+m+mf}{3.5}\PY{p}{)}\PY{p}{)}
 
@@ -577,15 +559,18 @@ Australian red wine sales data.
 \end{tcolorbox}
 
             \begin{tcolorbox}[breakable, size=fbox, boxrule=.5pt, pad at break*=1mm, opacityfill=0]
-\prompt{Out}{outcolor}{60}{\boxspacing}
+\prompt{Out}{outcolor}{9}{\boxspacing}
 \begin{Verbatim}[commandchars=\\\{\}]
-[<matplotlib.lines.Line2D at 0x7fb9482deed0>]
+[<matplotlib.lines.Line2D at 0x7fd3c20e1b90>]
 \end{Verbatim}
 \end{tcolorbox}
         
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_12_1.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.9\textwidth]{output_12_1.png}
+        \caption{The differenced observed series $\nabla_{12}x_t$ (left), $\nabla x_t$ (middle) and $\nabla\nabla_{12} x_t = \nabla_{12}\nabla x_t$ (right)
+        for the Australian red wine sales data.}
+    \end{figure}
     { \hspace*{\fill} \\}
     
     Reference:
