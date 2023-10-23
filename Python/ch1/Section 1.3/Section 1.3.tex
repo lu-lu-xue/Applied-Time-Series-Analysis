@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 
+    \usepackage[font=it,labelfont=bf]{caption}
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
     
@@ -19,9 +20,9 @@
     % Ensure that by default, figures have no caption (until we provide a
     % proper Figure object with a Caption API and a way to capture that
     % in the conversion process - todo).
-    \usepackage{caption}
-    \DeclareCaptionFormat{nocaption}{}
-    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+    % \usepackage{caption}
+    % \DeclareCaptionFormat{nocaption}{}
+    % \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
 
     \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
@@ -448,10 +449,15 @@ obtained from fitting a linear trend to the data (right panel).
 [<matplotlib.lines.Line2D at 0x7fccd8d74510>]
 \end{Verbatim}
 \end{tcolorbox}
-        
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_7_1.png}
-    \end{center}
+
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_7_1.png}
+        \caption{Annual water levels of Lake Huron (left panel) and the residual plot obtained from fitting a
+        linear trend to the data (right panel).}
+    \end{figure}
+
+
     { \hspace*{\fill} \\}
     
     Figure 1.8
@@ -528,9 +534,13 @@ panel) and their residuals (lower panel) with bandwidth q = 2 (left), q
 \end{Verbatim}
 \end{tcolorbox}
         
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_11_1.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_11_1.png}
+        \caption{The two-sided moving average filters $W_t$ for the Lake Huron data (upper panel) and their
+        residuals (lower panel) with bandwidth $q = 2$ (left), $q = 10$ (middle) and $q = 35$ (right).}
+    \end{figure}
+
     { \hspace*{\fill} \\}
     
     Figure 1.9
@@ -563,48 +573,13 @@ Huron data described in Example 1.3.1.
 [<matplotlib.lines.Line2D at 0x7fa0710cb0d0>]
 \end{Verbatim}
 \end{tcolorbox}
-        
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_14_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
-    
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{145}{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-\PY{c+c1}{\PYZsh{} Generate \PYZsq{}t\PYZsq{} as a sequence from 1 to the length of \PYZsq{}lake\PYZsq{}}
-\PY{n}{t} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{arange}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,} \PY{n+nb}{len}\PY{p}{(}\PY{n}{lake}\PY{p}{)} \PY{o}{+} \PY{l+m+mi}{1}\PY{p}{)}
 
-\PY{c+c1}{\PYZsh{} Define the moving averages}
-\PY{n}{ma2} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{lake}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{rolling}\PY{p}{(}\PY{n}{window}\PY{o}{=}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{center}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
-\PY{n}{ma10} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{lake}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{rolling}\PY{p}{(}\PY{n}{window}\PY{o}{=}\PY{l+m+mi}{21}\PY{p}{,} \PY{n}{center}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
-\PY{n}{ma35} \PY{o}{=} \PY{n}{pd}\PY{o}{.}\PY{n}{Series}\PY{p}{(}\PY{n}{lake}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{)}\PY{o}{.}\PY{n}{rolling}\PY{p}{(}\PY{n}{window}\PY{o}{=}\PY{l+m+mi}{71}\PY{p}{,} \PY{n}{center}\PY{o}{=}\PY{k+kc}{True}\PY{p}{)}\PY{o}{.}\PY{n}{mean}\PY{p}{(}\PY{p}{)}
-
-\PY{n}{a\PYZus{}2}\PY{p}{,} \PY{n}{b\PYZus{}2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{polyfit}\PY{p}{(}\PY{n}{x}\PY{p}{,} \PY{n}{ma2}\PY{p}{,} \PY{l+m+mi}{1}\PY{p}{)}
-\PY{n}{fitted\PYZus{}2} \PY{o}{=} \PY{n}{np}\PY{o}{.}\PY{n}{polyval}\PY{p}{(}\PY{p}{[}\PY{n}{a\PYZus{}2}\PY{p}{,}\PY{n}{b\PYZus{}2}\PY{p}{]}\PY{p}{,}\PY{n}{x}\PY{p}{)}
-
-
-\PY{c+c1}{\PYZsh{} Plot the moving averages}
-\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}1875}\PY{p}{,} \PY{n}{ma2}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Moving Average (window=5)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{c+c1}{\PYZsh{} plt.plot(x\PYZus{}1875,fitted\PYZus{}2)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}1875}\PY{p}{,} \PY{n}{ma10}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Moving Average (window=21)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{plot}\PY{p}{(}\PY{n}{x\PYZus{}1875}\PY{p}{,} \PY{n}{ma35}\PY{p}{,} \PY{n}{label}\PY{o}{=}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Moving Average (window=71)}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{} Set the plot labels and title}
-\PY{n}{plt}\PY{o}{.}\PY{n}{xlabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Time}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{ylabel}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Moving Average}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{title}\PY{p}{(}\PY{l+s+s1}{\PYZsq{}}\PY{l+s+s1}{Moving Averages}\PY{l+s+s1}{\PYZsq{}}\PY{p}{)}
-\PY{n}{plt}\PY{o}{.}\PY{n}{legend}\PY{p}{(}\PY{p}{)}
-
-\PY{c+c1}{\PYZsh{} Display the plot}
-\PY{n}{plt}\PY{o}{.}\PY{n}{show}\PY{p}{(}\PY{p}{)}
-\end{Verbatim}
-\end{tcolorbox}
-
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_0.png}
-    \end{center}
-    { \hspace*{\fill} \\}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_14_1.png}
+        \caption{Time series plots of the observed sequences ($\nabla x_t$) in the left panel and ($\nabla^2 x_t$) in the right
+        panel of the differenced Lake Huron data described in Example 1.3.1.}
+    \end{figure}
     
 
     % Add a bibliography block to the postdoc
