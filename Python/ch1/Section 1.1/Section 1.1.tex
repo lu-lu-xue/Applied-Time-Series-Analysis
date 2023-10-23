@@ -1,5 +1,7 @@
 \documentclass[11pt]{article}
 
+    \usepackage[font=it,labelfont=bf]{caption}
+
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
     
@@ -16,12 +18,12 @@
     \usepackage{graphicx}
     % Maintain compatibility with old templates. Remove in nbconvert 6.0
     \let\Oldincludegraphics\includegraphics
-    % Ensure that by default, figures have no caption (until we provide a
-    % proper Figure object with a Caption API and a way to capture that
-    % in the conversion process - todo).
-    \usepackage{caption}
-    \DeclareCaptionFormat{nocaption}{}
-    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+    % % Ensure that by default, figures have no caption (until we provide a
+    % % proper Figure object with a Caption API and a way to capture that
+    % % in the conversion process - todo).
+    % \usepackage{caption}
+    % \DeclareCaptionFormat{nocaption}{}
+    % \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
 
     \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
@@ -426,9 +428,12 @@ Wolfer's sunspot numbers from 1700 to 1994.
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_6_0.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_6_0.png}
+        \caption{W\"{o}lfer's sunspot numbers from 1700 to 1994.}
+    \end{figure}
+
     { \hspace*{\fill} \\}
     
     Figure 1.2
@@ -454,9 +459,12 @@ Number of lynx trapped in the MacKenzie River district between 1821 and
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_9_0.png}
-    \end{center}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_9_0.png}
+        \caption{Number of lynx trapped in the MacKenzie River district between 1821 and 1934.}
+    \end{figure}
+
     { \hspace*{\fill} \\}
     
     Figure 1.3
@@ -532,10 +540,13 @@ Yields of Treasury bills from July 17, 1959, to December 31, 1999.
 Text(0.5, 1.0, 'Yields of 12-month Treasury Bills')
 \end{Verbatim}
 \end{tcolorbox}
-        
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_13_1.png}
-    \end{center}
+
+    \begin{figure} 
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_13_1.png}
+        \caption{Yields of Treasury bills from July 17, 1959, to December 31, 1999.}
+    \end{figure}
+
     { \hspace*{\fill} \\}
     
     Figure 1.4
@@ -595,10 +606,13 @@ S\&P 500 from January 3, 1972, to December 31, 1999.
 Text(0.5, 1.0, 'The Standard and Poor’s 500 Index')
 \end{Verbatim}
 \end{tcolorbox}
-        
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_15_1.png}
-    \end{center}
+    
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_15_1.png}
+        \caption{S&P 500 from January 3, 1972, to December 31, 1999.}
+    \end{figure}
+
     { \hspace*{\fill} \\}
     
 
