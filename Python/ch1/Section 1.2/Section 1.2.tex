@@ -1,5 +1,6 @@
 \documentclass[11pt]{article}
 
+    \usepackage[font=it,labelfont=bf]{caption}
     \usepackage[breakable]{tcolorbox}
     \usepackage{parskip} % Stop auto-indenting (to mimic markdown behaviour)
     
@@ -19,9 +20,9 @@
     % Ensure that by default, figures have no caption (until we provide a
     % proper Figure object with a Caption API and a way to capture that
     % in the conversion process - todo).
-    \usepackage{caption}
-    \DeclareCaptionFormat{nocaption}{}
-    \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
+    % \usepackage{caption}
+    % \DeclareCaptionFormat{nocaption}{}
+    % \captionsetup{format=nocaption,aboveskip=0pt,belowskip=0pt}
 
     \usepackage[Export]{adjustbox} % Used to constrain images to a maximum size
     \adjustboxset{max size={0.9\linewidth}{0.9\paperheight}}
@@ -430,15 +431,18 @@ stochastic amplitude (middle panel), and the sine part (right panel).
 \end{Verbatim}
 \end{tcolorbox}
 
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_5_0.png}
-    \end{center}
+    \begin{figure} 
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_5_0.png}
+        \caption{100 simulated values of the cyclical time series (left panel), the stochastic amplitude (middle
+        panel), and the sine part (right panel).}
+    \end{figure}
     { \hspace*{\fill} \\}
     
     Figure 1.6
 
-1000 simulated values of iid \(N(0; 1)\) noise (left panel) and a random
-walk with iid \(N(0; 1)\) innovations (right panel).
+1000 simulated values of iid \(N(0, 1)\) noise (left panel) and a random
+walk with iid \(N(0, 1)\) innovations (right panel).
 
     \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
 \prompt{In}{incolor}{31}{\boxspacing}
@@ -466,18 +470,12 @@ walk with iid \(N(0; 1)\) innovations (right panel).
 \end{Verbatim}
 \end{tcolorbox}
         
-    \begin{center}
-    \adjustimage{max size={0.9\linewidth}{0.9\paperheight}}{output_8_1.png}
-    \end{center}
-    { \hspace*{\fill} \\}
+    \begin{figure} 
+        \centering
+        \includegraphics[width=0.8\textwidth]{output_8_1.png}
+        \caption{1000 simulated values of iid \mathcal{N}(0,1) noise (left panel) and a random walk with iid \mathcal{N}(0,1) innovations (right panel).}
+    \end{figure}
     
-    \begin{tcolorbox}[breakable, size=fbox, boxrule=1pt, pad at break*=1mm,colback=cellbackground, colframe=cellborder]
-\prompt{In}{incolor}{ }{\boxspacing}
-\begin{Verbatim}[commandchars=\\\{\}]
-
-\end{Verbatim}
-\end{tcolorbox}
-
 
     % Add a bibliography block to the postdoc
     
